@@ -1,0 +1,38 @@
+<div
+  class="rounded-full col-span-1 p-5 flex items-center gap-5"
+  [ngStyle]="{ 'background-color': item.color }"
+>
+  <div>
+    <div
+      class="relative w-20 h-20 flex items-center justify-center rounded-full"
+    >
+      <span class="outline-text">{{ item.percentage }}%</span>
+      <svg class="absolute inset-0 w-full h-full" viewBox="0 0 36 36">
+        <!-- Background Circle -->
+        <circle
+          class="circle-bg"
+          cx="18"
+          cy="18"
+          r="15.9155"
+          fill="none"
+        ></circle>
+        <!-- Dynamic Outline Circle -->
+        <circle
+          class="circle-progress"
+          cx="18"
+          cy="18"
+          r="15.9155"
+          fill="none"
+          [attr.stroke-dasharray]="getStrokeDashArray()"
+          [attr.stroke-dashoffset]="getStrokeDashOffset(item.percentage)"
+        ></circle>
+      </svg>
+    </div>
+  </div>
+  <div>
+    <p class="font-medium mb-1 font-poppins">
+      {{ item.title }} <span class="font-normal">{{ item.subtitle }}</span>
+    </p>
+    <p class="font-light text-sm">{{ item.description }}</p>
+  </div>
+</div>

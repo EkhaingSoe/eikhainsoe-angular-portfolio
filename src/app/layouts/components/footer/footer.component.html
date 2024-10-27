@@ -1,0 +1,18 @@
+<section class="bg-primary mt-10 text-gray-800 font-poppins">
+  <div class="container mx-auto flex items-center justify-between py-4">
+    <div>
+      <p>2024 EiKhaingSoe, All Rights Reserved.</p>
+    </div>
+    <div class="flex items-center gap-5">
+      <ng-container *ngFor="let icon of icons">
+        <div
+          class="outline outline-1 w-8 h-8 flex items-center justify-center rounded-full cursor-pointer hover:bg-black hover:text-white"
+        >
+          <a [href]="icon.link" target="_blank">
+            <i [class]="icon.iconClass + ' hover:text-white text-lg'"></i>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

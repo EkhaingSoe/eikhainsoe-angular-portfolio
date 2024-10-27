@@ -1,0 +1,36 @@
+<section>
+  <app-sub-title [titleOne]="'What I'" [titleTwo]="'Achieve'"></app-sub-title>
+  <div class="flex items-center justify-center my-5">
+    <div class="flex gap-2 border border-black p-2 rounded-full">
+      <button
+        (click)="showEducation()"
+        [ngClass]="{
+        'bg-gray-900 text-gray-200 px-5 py-1': showEducationSection,
+        'bg-gray-200 text-gray-900 px-4 py-2': !showEducationSection
+      }"
+        class="font-medium  tracking-wide rounded-full"
+      >
+        Education
+      </button>
+      <button
+        (click)="showExperience()"
+        [ngClass]="{
+        'bg-gray-900 text-gray-200 px-5 py-1': !showEducationSection,
+        'bg-gray-200 text-gray-900 px-4 py-2': showEducationSection
+      }"
+        class="font-medium tracking-wide px-4 py-2 rounded-full"
+      >
+        Experience
+      </button>
+    </div>
+  </div>
+  <!-- Education Section -->
+  <div *ngIf="showEducationSection" class="mt-5">
+    <app-eduation></app-eduation>
+  </div>
+
+  <!-- Experience Section -->
+  <div *ngIf="!showEducationSection" class="mt-5">
+    <app-experience></app-experience>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+.creativity{
+    text-shadow: 1px 1px #111a24, -2px 1px #111a24, 1px -1px #111a24, -1px -1px #111a24;
+}
+
+.relative {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outline-text {
+  z-index: 1;
+}
+
+svg {
+  transform: rotate(-90deg); /* Rotate to start progress from the top */
+}
+
+.circle-bg {
+  stroke: #ffffff; /* Background circle color */
+  stroke-width: 0.5;
+}
+
+.circle-progress {
+  stroke: #080808; /* Progress circle color */
+  stroke-width: 0.5;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+

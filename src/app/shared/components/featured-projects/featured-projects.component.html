@@ -1,0 +1,31 @@
+<section>
+ <app-sub-title [titleOne]="'Featured'" [titleTwo]="'Projects'"></app-sub-title>
+  <div class="flex items-center justify-center my-5">
+    <div class="flex gap-2 border border-black p-2 rounded-full">
+      <button (click)="showAll()" class="font-medium tracking-wide rounded-full"
+        [ngClass]="{
+          'bg-gray-900 text-gray-200 px-5 py-1': showAllProjects,
+          'bg-gray-200 text-gray-900 px-4 py-2': !showAllProjects
+        }"
+      >
+        All
+      </button>
+      <button (click)="showReact()"  class="font-medium tracking-wide px-4 py-2 rounded-full"
+        [ngClass]="{
+          'bg-gray-900 text-gray-200 px-5 py-1': !showAllProjects,
+          'bg-gray-200 text-gray-900 px-4 py-2': showAllProjects
+        }"
+      >
+        React
+      </button>
+    </div>
+  </div>
+  <!-- All projects Section -->
+  <div *ngIf="showAllProjects" class="mt-5">
+   <app-projects></app-projects>
+  </div>
+
+  <div *ngIf="!showAllProjects" class="mt-5">
+    <app-experience></app-experience>
+  </div>
+</section>
