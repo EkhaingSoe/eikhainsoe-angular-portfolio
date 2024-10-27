@@ -24,11 +24,11 @@
           data-aos-delay="600"
         >
           <div class="hero-inner-img mx-auto relative">
-            <img
+            <!-- <img
               src="https://images.unsplash.com/photo-1729731321992-5fdb6568816a?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               class="w-[300px] mx-auto"
               alt="Ei Khaing Soe"
-            />
+            /> -->
           </div>
         </div>
       </div>
@@ -37,7 +37,8 @@
           class="bix-hero-contact h-full flex flex-col justify-center relative max-[991px]:mt-[15px] max-[991px]:pb-[30px] max-[991px]:items-center max-[575px]:text-center"
         >
           <h4
-            class="mb-[8px] font-poppins tracking-[0.03rem] leading-[1.2] text-[35px] font-bold text-custom-red max-[1399px]:text-[32px] max-[1199px]:text-[28px] max-[767px]:text-[24px] aos-init aos-animate"
+          [ngClass]="'text' + selectedColorClass"
+            class="mb-[8px] font-poppins tracking-[0.03rem] leading-[1.2] text-[35px] font-bold  max-[1399px]:text-[32px] max-[1199px]:text-[28px] max-[767px]:text-[24px] aos-init aos-animate"
           >
             Hi, I am
           </h4>
@@ -52,14 +53,15 @@
             data-aos-duration="2000"
           >
             I am a
-            <span class="mx-[5px] text-custom-red">Frontend Developer</span>
+            <span [ngClass]="'text' + selectedColorClass"  class="mx-[5px] ">Frontend Developer</span>
           </p>
           <div
             class="bix-buttons m-[-10px] pt-[50px] flex flex-wrap relative max-[991px]:pt-[20px] max-[575px]:justify-center aos-init aos-animate"
           >
             <button
               type="button"
-              class="bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-poppins text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:bg-custom-red hover:border-red-600 hover:text-[#fff]"
+              [ngClass]="'hover:bg' + selectedColorClass"
+              class="bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-poppins text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:border-red-600 hover:text-[#fff]"
             >
               Download CV
             </button>

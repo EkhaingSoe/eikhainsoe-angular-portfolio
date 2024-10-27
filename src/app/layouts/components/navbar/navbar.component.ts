@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SidebarService } from '../../../shared/services/sidebar.service';
+import { SettingService } from '../../../shared/services/setting.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,25 @@ import { SidebarService } from '../../../shared/services/sidebar.service';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  constructor(private sidebarService: SidebarService) {}
+  selectedColorClass: string = '';
+  constructor(
+    private sidebarService: SidebarService,
+    private settingService: SettingService
+  ) {
+    this.settingService.selectedColor$.subscribe((colorClass) => {
+      console.log(colorClass);
+      this.selectedColorClass = colorClass;
+    });
+  }
+
+  ngOnInit() {}
 
   openSidebar() {
     this.sidebarService.toggleSidebar(true);
+  }
+
+  getHoverClass() {
+    // Remove 'text-' prefix from selectedColorClass to create hover class
+    return 'hover:' + this.selectedColorClass.replace('text', '');
   }
 }

@@ -1,14 +1,14 @@
 <div class="relative">
   <!-- Overlay -->
   <div
-    *ngIf="isSettingSidebarOpen"
+    *ngIf="isSettingSidebarOpen" (click)="closeSetting()"
     class="fixed inset-0 bg-black bg-opacity-50 z-40"
   ></div>
 
   <!-- Sidebar -->
   <section
   [class.translate-x-0]="isSettingSidebarOpen"
-    [class.translate-x-full]="!isSettingSidebarOpen"
+    [class.translate-x-full]="!isSettingSidebarOpen" 
     class="fixed top-0 right-0 h-full w-80 bg-white z-50 transform transition-transform duration-300 ease-in-out"
   >
     <div>
@@ -25,22 +25,17 @@
           <div
             *ngFor="let color of colors"
             class="w-10 h-10 flex items-center justify-center rounded cursor-pointer border-2 border-transparent"
-            [ngClass]="[
-              color.colorClass,
-              selectedColorClass === color.colorClass ? 'border-black' : ''
-            ]"
+           [ngClass]="'bg' + color.colorClass"
             (click)="selectColor(color.colorClass)"
           >
           <i *ngIf="selectedColorClass === color.colorClass" class="ri-check-double-line text-white text-lg"></i>
         </div>
         </div>
-        <div class="p-5 mt-5 rounded text-white" [ngClass]="selectedColorClass">
-        <p>This is an example of the selected color theme.</p>
+        <div class="p-5 mt-5 rounded text-white" [ngClass]="'bg'+selectedColorClass">
+        <p>This is the selected color theme.</p>
         </div>
       </div>
     </div>
   </section>
 </div>
 
-<!-- [class.translate-x-0]="isSidebarOpen"
-    [class.-translate-x-full]="!isSidebarOpen" -->

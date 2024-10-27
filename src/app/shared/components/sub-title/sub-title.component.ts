@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { SettingService } from '../../services/setting.service';
 
 @Component({
   selector: 'app-sub-title',
@@ -8,4 +9,10 @@ import { Component, Input } from '@angular/core';
 export class SubTitleComponent {
   @Input() titleOne: string = 'About'; // Default value if not provided
   @Input() titleTwo: string = 'Me';
+  selectedColorClass: string = '';
+  constructor(private settingService: SettingService) {
+    this.settingService.selectedColor$.subscribe((colorClass) => {
+      this.selectedColorClass = colorClass;
+    });
+  }
 }
