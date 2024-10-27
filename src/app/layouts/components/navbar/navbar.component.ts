@@ -8,7 +8,7 @@ import { SettingService } from '../../../shared/services/setting.service';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  selectedColorClass: string = '';
+  selectedColorClass: string = 'text-red-600';
   constructor(
     private sidebarService: SidebarService,
     private settingService: SettingService
