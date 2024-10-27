@@ -62,5 +62,11 @@ export class ProjectsComponent {
       para: 'This is Dashboard using HTML,CSS, React and Tailwind',
       link: 'https://dashboard1996.netlify.app/',
     },
+    {
+      image: '../../../../../assets/images/invoice-app.png',
+      title: 'Invoice-app',
+      para: 'This is Invoice-app using HTML,CSS, React and Tailwind',
+      link: 'https://invoice-app-1996.netlify.app/',
+    },
   ];
 }

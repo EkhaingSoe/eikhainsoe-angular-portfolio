@@ -13,13 +13,15 @@ export class NavbarComponent {
     private sidebarService: SidebarService,
     private settingService: SettingService
   ) {
+    
+  }
+
+  ngOnInit() {
     this.settingService.selectedColor$.subscribe((colorClass) => {
       console.log(colorClass);
       this.selectedColorClass = colorClass;
     });
   }
-
-  ngOnInit() {}
 
   openSidebar() {
     this.sidebarService.toggleSidebar(true);

@@ -58,13 +58,14 @@
           <div
             class="bix-buttons m-[-10px] pt-[50px] flex flex-wrap relative max-[991px]:pt-[20px] max-[575px]:justify-center aos-init aos-animate"
           >
-            <button
-              type="button"
-              [ngClass]="'hover:bg' + selectedColorClass"
-              class="bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-poppins text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:border-red-600 hover:text-[#fff]"
-            >
-              Download CV
-            </button>
+          <a
+            href="assets/files/update_resume_2.pdf"
+            download
+            [ngClass]="'hover:bg' + selectedColorClass"
+            class="bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-poppins text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:border-red-600 hover:text-[#fff]"
+          >
+            Download CV
+          </a>
             <button
               type="button"
               class="modal-trigger bix-modal-toggle bix-button m-[10px] transition-all duration-[0.3s] ease-in-out py-[10px] px-[15px] font-poppins text-[14px] font-semibold leading-[1.2] capitalize bg-[#fff] text-[#111a24] border-[1px] border-solid border-[#111a24] rounded-[15px] hover:bg-custom-red hover:border-custom-red hover:text-[#fff]"

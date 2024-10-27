@@ -13,6 +13,7 @@ import { ResumeComponent } from './pages/resume/resume.component';
 import { SharedModule } from './shared/shared.module';
 import { LayoutsModule } from './layouts/layouts.module';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,13 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
     ResumeComponent,
     AboutMeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, LayoutsModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([]),
+    AppRoutingModule,
+    SharedModule,
+    LayoutsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,13 +1,13 @@
 <nav class="bg-primary  p-4 my-4 rounded-3xl outline outline-1">
   <div class="container mx-auto flex justify-between items-center">
     <div  class=" text-lg font-poppins font-semibold">
-      Ei Khaing <span [ngClass]="selectedColorClass" >Soe</span> 
+      Ei Khaing <span [ngClass]="'text'+selectedColorClass" >Soe</span> 
     </div>
     <div class="hidden md:flex space-x-4">
-      <a href="/" [ngClass]="getHoverClass()" class=" px-3 py-2  cursor-pointer   rounded-md">Home</a>
-      <a href="/about" class=" px-3 py-2  cursor-pointer  hover:text-red-600 rounded-md">About</a>
-      <a href="/projects" class=" px-3 py-2  cursor-pointer  hover:text-red-600 rounded-md">Projects</a>
-      <a href="/resume" class=" px-3 py-2  cursor-pointer  hover:text-red-600 rounded-md">Resume</a>
+      <a [routerLink]="['/']"  routerLinkActive="text-red-600 font-semibold underline" [routerLinkActiveOptions]="{ exact: true }" class=" px-3 py-2  cursor-pointer   rounded-md">Home</a>
+      <a  [routerLink]="['/about']" routerLinkActive="text-red-600 font-semibold underline" class=" px-3 py-2  cursor-pointer  hover:text-red-600 rounded-md">About</a>
+      <a [routerLink]="['/projects']" routerLinkActive="text-red-600 font-semibold underline" class=" px-3 py-2  cursor-pointer  hover:text-red-600 rounded-md">Projects</a>
+      <a [routerLink]="['/resume']" routerLinkActive="text-red-600 font-semibold underline" class=" px-3 py-2  cursor-pointer  hover:text-red-600 rounded-md">Resume</a>
     </div>
     <div class="md:hidden flex items-center">
       <button id="mobile-menu-button" class="outline outline-1 flex items-center justify-center w-8 h-8 rounded-full" (click)="openSidebar()">

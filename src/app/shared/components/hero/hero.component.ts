@@ -13,4 +13,5 @@ export class HeroComponent {
       this.selectedColorClass = colorClass;
     });
   }
+
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { SidebarService } from '../../../shared/services/sidebar.service';
 import { SettingService } from '../../../shared/services/setting.service';
 
@@ -8,6 +8,7 @@ import { SettingService } from '../../../shared/services/setting.service';
   styleUrl: './setting.component.css',
 })
 export class SettingComponent {
+  
   isSettingSidebarOpen = true;
   colors = [
     { name: 'red', colorClass: '-custom-red' },
@@ -25,12 +26,14 @@ export class SettingComponent {
 
   selectColor(colorClass: string) {
     this.selectedColorClass = colorClass;
-    this.settingService.setSelectedColor(colorClass)
+    this.settingService.setSelectedColor(colorClass);
+    this.changeDetector.detectChanges();
   }
 
   constructor(
     private sidebarService: SidebarService,
-    private settingService: SettingService
+    private settingService: SettingService,
+    private changeDetector: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
